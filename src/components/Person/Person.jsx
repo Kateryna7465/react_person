@@ -6,8 +6,8 @@ export const Person = ({ person }) => {
   );
 
   const marriageStatus = person.isMarried
-    ? `${partnerRole}: ${person.PartnerName}`
-    : 'i am not married';
+    ? `${partnerRole}: ${person.partnerName}`
+    : 'I am not married';
 
   return (
     <div className="Person">

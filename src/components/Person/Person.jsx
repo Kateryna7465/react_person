@@ -1,18 +1,23 @@
-export const Person = ({ person }) => {
+import React from 'react';
 
-  const partnerRole = person.sex === 'm' ? 'wife' : 'husband';
+export const Person = ({
+  person: { name, age, sex, isMarried, partnerName },
+}) => {
 
-  const ageElement = person.age && (
-    <p className="Person__age">I am {person.age}</p>
+  const partnerRole = sex === 'm' ? 'wife' : 'husband';
+
+  const ageElement = age && (
+    <p className="Person__age">I am {age}</p>
   );
 
-  const marriageStatus = person.isMarried
-    ? `${person.partnerName} is my ${partnerRole}`
+  const marriageStatus = isMarried
+    ? `${partnerName} is my ${partnerRole}`
     : 'I am not married';
 
   return (
     <div className="Person">
-      <h2 className="Person__name">My name is {person.name}</h2>
+      
+      <h2 className="Person__name">My name is {name}</h2>
 
       {ageElement}
 

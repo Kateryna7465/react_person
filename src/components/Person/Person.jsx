@@ -1,17 +1,18 @@
 export const Person = ({ person }) => {
+
   const partnerRole = person.sex === 'm' ? 'wife' : 'husband';
 
   const ageElement = person.age && (
-    <p className="Person__age">Age: {person.age}</p>
+    <p className="Person__age">I am {person.age}</p>
   );
 
   const marriageStatus = person.isMarried
-    ? `${partnerRole}: ${person.partnerName}`
+    ? `${person.partnerName} is my ${partnerRole}`
     : 'I am not married';
 
   return (
     <div className="Person">
-      <h2 className="Person__name">{person.name}</h2>
+      <h2 className="Person__name">My name is {person.name}</h2>
 
       {ageElement}
 
